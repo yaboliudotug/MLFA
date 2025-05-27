@@ -1,0 +1,41 @@
+OUTPUT_DIR: './experiments/sigma_plus_plus_tta/kitti_to_cityscapes/'
+MODEL:
+  META_ARCHITECTURE: "GeneralizedRCNN"
+  WEIGHT: 'source_only_models/model_kitti_90.05126222994265_0059000.pth'
+  RPN_ONLY: True
+  FCOS_ON: True
+  TTA_ON: True # whether conduct domain adaptation
+
+  BACKBONE:
+    CONV_BODY: "VGG-16-FPN-RETINANET"
+  RETINANET:
+    USE_C5: False # FCOS uses P5 instead of C5
+  FCOS:
+    NUM_CONVS_REG: 4
+    NUM_CONVS_CLS: 4
+    NUM_CLASSES: 2
+    INFERENCE_TH: 0.05    # pre_nms_thresh    (default=0.05)
+    PRE_NMS_TOP_N: 1000   # pre_nms_top_n     (default=1000)
+    NMS_TH: 0.6          # nms_thresh        (default=0.6)
+    REG_CTR_ON: True
+
+TEST:
+  DETECTIONS_PER_IMG: 100 # fpn_post_nms_top_n  (default=100)
+  MODE: 'common'
+DATASETS:
+  TRAIN_SOURCE: ("kitti_train_caronly", )
+  TRAIN_TARGET: ("cityscapes_val_caronly_cocostyle", )
+  TEST: ("cityscapes_val_caronly_cocostyle", )
+INPUT:
+  MIN_SIZE_RANGE_TRAIN: (640, 800)
+  MAX_SIZE_TRAIN: 1333
+  MIN_SIZE_TEST: 800
+  MAX_SIZE_TEST: 1333
+DATALOADER:
+  SIZE_DIVISIBILITY: 32
+SOLVER:
+  IMS_PER_BATCH: 2
+  BACKBONE:
+    BASE_LR: 0.0025
+  FCOS:
+    BASE_LR: 0.0025
