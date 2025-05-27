@@ -1,4 +1,4 @@
-OUTPUT_DIR: './experiments/sigma_plus_plus_tta/kitti_to_cityscapes/'
+OUTPUT_DIR: './experiments/kitti_to_cityscapes/'
 MODEL:
   META_ARCHITECTURE: "GeneralizedRCNN"
   WEIGHT: 'source_only_models/model_kitti_90.05126222994265_0059000.pth'

@@ -1,4 +1,4 @@
-OUTPUT_DIR: './experiments/sigma_plus_plus_tta_smooth/city_to_foggy_4/'
+OUTPUT_DIR: './experiments/city_to_foggy/'
 MODEL:
   META_ARCHITECTURE: "GeneralizedRCNN"
   WEIGHT: 'source_only_models/model_cityscape_47.39118595303549_0024500.pth'

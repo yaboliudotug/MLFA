@@ -1,4 +1,4 @@
-OUTPUT_DIR: './experiments/sigma_plus_plus_tta/sim10k_to_city/'
+OUTPUT_DIR: './experiments/sim10k_to_city/'
 MODEL:
   META_ARCHITECTURE: "GeneralizedRCNN"
   WEIGHT: 'source_only_models/model_sim10k_87.16323957979904_0074200.pth'
