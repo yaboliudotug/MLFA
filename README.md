@@ -3,7 +3,7 @@
 ## 💡 Preparation
 
 #### Datasets
-Prepare required benchmark datasets following [DATASET.md](./docs/DATASETS.md). Almost all popular DAOD benchmarks are supported in this project.
+Prepare required benchmark datasets following [DATASET.md](https://github.com/CityU-AIM-Group/SIGMA/blob/main/docs/DATASETS.md). Almost all popular DAOD benchmarks are supported in this project.
 
 #### Installation
 ```
